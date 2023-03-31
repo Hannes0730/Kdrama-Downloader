@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>655</width>
+    <height>735</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>655</width>
+    <height>735</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>655</width>
+    <height>735</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Kdrama Downloader</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.webp</normaloff>icon.webp</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+background-color: rgb(232, 232, 232);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>21</x>
+      <y>32</y>
+      <width>621</width>
+      <height>681</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QSplitter" name="splitter_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <widget class="QLineEdit" name="query_input">
+        <property name="font">
+         <font>
+          <family>Sans Serif Collection</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>IBeamCursor</cursorShape>
+        </property>
+        <property name="mouseTracking">
+         <bool>true</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit#query_input {
+	border: 1px solid gray;
+    border-radius: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+}</string>
+        </property>
+        <property name="placeholderText">
+         <string>Search....</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="search_btn">
+        <property name="font">
+         <font>
+          <family>Sans Serif Collection</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #4B9EEB;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+QPushButton:hover {
+    background-color: #6CB6F1;
+}
+
+QPushButton:pressed {
+    animation: bounce 0.3s;
+    background-color: #3D8BC9;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}</string>
+        </property>
+        <property name="text">
+         <string>Search</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="font">
+            <font>
+             <family>Sans Serif Collection</family>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Movie List</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="movie_list">
+           <property name="maximumSize">
+            <size>
+             <width>345</width>
+             <height>201</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Sans Serif Collection</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="cursor" stdset="0">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="movie_image">
+         <property name="minimumSize">
+          <size>
+           <width>241</width>
+           <height>211</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>241</width>
+           <height>211</height>
+          </size>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="font">
+          <font>
+           <family>Sans Serif Collection</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Episode List</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <widget class="QListWidget" name="episode_list">
+           <property name="font">
+            <font>
+             <family>Sans Serif Collection</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="cursor" stdset="0">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="download_btn">
+           <property name="minimumSize">
+            <size>
+             <width>231</width>
+             <height>41</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>231</width>
+             <height>41</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Sans Serif Collection</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #4B9EEB;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+QPushButton:hover {
+    background-color: #6CB6F1;
+}
+
+QPushButton:pressed {
+    animation: bounce 0.3s;
+    background-color: #3D8BC9;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}</string>
+           </property>
+           <property name="text">
+            <string>Download</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="download_label">
+       <property name="font">
+        <font>
+         <family>Sans Serif Collection</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QProgressBar" name="progress_bar">
+       <property name="value">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
