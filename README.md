@@ -11,6 +11,8 @@ Root/
 ├─ movies/
 ├─ ffmpeg/      (Optional, can be placed anywhere)
 ├─ kdrama.ui
+├─ logo.png
+├─ logo.ico
 ├─ main.exe
 ```
 
