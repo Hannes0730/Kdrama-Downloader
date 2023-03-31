@@ -31,6 +31,7 @@ class MainUI(QMainWindow):
         self.movies = None
         self.query = None
         uic.loadUi("kdrama.ui", self)
+        self.setWindowIcon(QIcon("logo.png"))
         self.show()
 
         self.query_input = self.findChild(QLineEdit, "query_input")
@@ -50,24 +51,27 @@ class MainUI(QMainWindow):
 
 
     def start_movie_fetcher_thread(self):
-        self.query_input.setReadOnly(True)
-        self.search_btn.setEnabled(False)
         self.query = self.query_input.text()
-        self.movie_fetcher_thread = MovieFetcherThread(self.query)
-        self.movie_fetcher_thread.movie_object_signal.connect(self.display_movies)
-        self.movie_fetcher_thread.start()
+        if self.query:
+            self.query_input.setReadOnly(True)
+            self.search_btn.setEnabled(False)
+            self.movie_fetcher_thread = MovieFetcherThread(self.query)
+            self.movie_fetcher_thread.movie_object_signal.connect(self.display_movies)
+            self.movie_fetcher_thread.start()
+        else:
+            self.show_popup_error("Search Error", "Search query is empty")
 
 
     def display_movies(self, movies):
         self.movies = movies
         self.clear_movie_list()
-        for movie in self.movies:
-            self.movie_list_widget.addItem(movie['title'])
+        if self.movies:
+            for movie in self.movies:
+                self.movie_list_widget.addItem(movie['title'])
         self.search_btn.setEnabled(True)
         self.query_input.setReadOnly(False)
 
     def clear_movie_list(self):
-        self.movie_list_widget.setCurrentRow(0)
         self.movie_list_widget.clear()
 
 
